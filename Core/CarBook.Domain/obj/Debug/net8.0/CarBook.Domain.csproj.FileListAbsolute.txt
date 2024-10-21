@@ -9,3 +9,4 @@
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/refint/CarBook.Domain.dll
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.pdb
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/ref/CarBook.Domain.dll
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.sourcelink.json

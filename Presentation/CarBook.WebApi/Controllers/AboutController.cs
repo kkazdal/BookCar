@@ -32,14 +32,14 @@ namespace CarBook.WebApi.Controller
             _removeAboutHandle = removeAboutHandle;
         }
 
-        [HttpGet]
+        [HttpGet("GetAboutList")]
         public async Task<IActionResult> AboutList()
         {
             var response = await _getAboutQueryHandler.Handle();
             return Ok(response);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("GetAboutById")]
         public async Task<IActionResult> GetAbout(int id)
         {
             var response = await _getAboutByIdQueryHandler.Handle(new GetAboutByIdQuery(id));

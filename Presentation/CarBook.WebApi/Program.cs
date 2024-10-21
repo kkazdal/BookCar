@@ -15,6 +15,18 @@ builder.Services.AddScoped<UpdateAboutHandle>();
 builder.Services.AddScoped<RemoveAboutHandle>();
 builder.Services.AddScoped<CreateAboutHandle>();
 
+builder.Services.AddScoped<GetBannerByIdQueryHandle>();
+builder.Services.AddScoped<GetBannerQueryHandle>();
+builder.Services.AddScoped<UpdateBannerHandle>();
+builder.Services.AddScoped<RemoveBannerHandle>();
+builder.Services.AddScoped<CreateBannerHandle>();
+
+builder.Services.AddScoped<GetBrandByIdQueryHandle>();
+builder.Services.AddScoped<GetBrandQueryHandle>();
+builder.Services.AddScoped<UpdateBrandHandle>();
+builder.Services.AddScoped<RemoveBrandHandle>();
+builder.Services.AddScoped<CreateBrandHandle>();
+
 builder.Services.AddControllers(); // <-- Controller'ları ekledik
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

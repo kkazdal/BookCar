@@ -147,3 +147,4 @@
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Presentation/CarBook.WebApi/obj/Debug/net8.0/ref/CarBook.WebApi.dll
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Presentation/CarBook.WebApi/bin/Debug/net8.0/CarBook.Application.dll
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Presentation/CarBook.WebApi/bin/Debug/net8.0/CarBook.Application.pdb
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Presentation/CarBook.WebApi/obj/Debug/net8.0/CarBook.WebApi.sourcelink.json

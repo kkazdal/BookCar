@@ -13,3 +13,4 @@
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Application/obj/Debug/net8.0/refint/CarBook.Application.dll
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Application/obj/Debug/net8.0/CarBook.Application.pdb
 /Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Application/obj/Debug/net8.0/ref/CarBook.Application.dll
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Application/obj/Debug/net8.0/CarBook.Application.sourcelink.json
