@@ -1,6 +1,5 @@
 using CarBook.Application.Features.CQRS.Commands.Banner;
 using CarBook.Application.Features.CQRS.Results.Banner;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebApi.Controllers
