@@ -1,0 +1,11 @@
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/bin/Debug/net8.0/CarBook.Domain.deps.json
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/bin/Debug/net8.0/CarBook.Domain.dll
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/bin/Debug/net8.0/CarBook.Domain.pdb
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.AssemblyInfoInputs.cache
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.AssemblyInfo.cs
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.csproj.CoreCompileInputs.cache
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.dll
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/refint/CarBook.Domain.dll
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/CarBook.Domain.pdb
+/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Core/CarBook.Domain/obj/Debug/net8.0/ref/CarBook.Domain.dll
