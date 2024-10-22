@@ -1,11 +1,14 @@
 using CarBook.Application.Features.CQRS.Handlers.AboutHandler;
+using CarBook.Application.Features.CQRS.Handlers.Car;
 using CarBook.Application.Interfaces;
+using CarBook.Application.Interfaces.CarRespositories;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
 
 builder.Services.AddScoped<CarBookContext>();
 
@@ -29,6 +32,7 @@ builder.Services.AddScoped<CreateBrandHandle>();
 
 builder.Services.AddScoped<GetCarByIdQueryHandle>();
 builder.Services.AddScoped<GetCarQueryHandle>();
+builder.Services.AddScoped<GetCarListWithBrandHandle>();
 builder.Services.AddScoped<UpdateCarHandle>();
 builder.Services.AddScoped<RemoveCarHandle>();
 builder.Services.AddScoped<CreateCarHandle>();

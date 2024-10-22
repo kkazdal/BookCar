@@ -1,4 +1,5 @@
 using CarBook.Application.Features.CQRS.Commands.Car;
+using CarBook.Application.Features.CQRS.Handlers.Car;
 using CarBook.Application.Features.CQRS.Queries.Car;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,12 +14,14 @@ namespace CarBook.WebApi.Controllers
         private readonly GetCarQueryHandle _getCarQueryHandler;
         private readonly UpdateCarHandle _updateCarHandle;
         private readonly RemoveCarHandle _removeCarHandle;
+        private readonly GetCarListWithBrandHandle _getCarListWithBrandHandle;
         public CarController(
             CreateCarHandle createCarHandler,
             GetCarByIdQueryHandle getCarByIdQueryHandle,
             GetCarQueryHandle getCarQueryHandle,
             UpdateCarHandle updateCarHandle,
-            RemoveCarHandle removeCarHandle
+            RemoveCarHandle removeCarHandle,
+            GetCarListWithBrandHandle getCarListWithBrandHandle
         )
         {
             _createCarHandler = createCarHandler;
@@ -26,6 +29,7 @@ namespace CarBook.WebApi.Controllers
             _getCarQueryHandler = getCarQueryHandle;
             _updateCarHandle = updateCarHandle;
             _removeCarHandle = removeCarHandle;
+            _getCarListWithBrandHandle = getCarListWithBrandHandle;
         }
 
         [HttpGet("GetCarList")]
@@ -39,6 +43,13 @@ namespace CarBook.WebApi.Controllers
         public async Task<IActionResult> GetCar(int id)
         {
             var response = await _getCarByIdQueryHandler.Handle(new GetCarQueryByIdQuery(id));
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarListWithBrands")]
+        public async Task<IActionResult> GetCarListWithBrands()
+        {
+            var response = await _getCarListWithBrandHandle.Handle();
             return Ok(response);
         }
 
