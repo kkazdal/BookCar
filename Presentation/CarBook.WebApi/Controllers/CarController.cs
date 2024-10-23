@@ -49,7 +49,7 @@ namespace CarBook.WebApi.Controllers
         [HttpGet("GetCarListWithBrands")]
         public async Task<IActionResult> GetCarListWithBrands()
         {
-            var response = await _getCarListWithBrandHandle.Handle();
+            var response = _getCarListWithBrandHandle.Handle();
             return Ok(response);
         }
 

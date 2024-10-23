@@ -37,6 +37,12 @@ builder.Services.AddScoped<UpdateCarHandle>();
 builder.Services.AddScoped<RemoveCarHandle>();
 builder.Services.AddScoped<CreateCarHandle>();
 
+builder.Services.AddScoped<GetCategoryByIdQueryHandle>();
+builder.Services.AddScoped<GetCategoryQueryHandle>();
+builder.Services.AddScoped<UpdateCategoryHandle>();
+builder.Services.AddScoped<RemoveCategoryHandle>();
+builder.Services.AddScoped<CreateCategoryHandle>();
+
 builder.Services.AddControllers(); // <-- Controller'ları ekledik
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -10,7 +10,7 @@ public class GetCarListWithBrandHandle
     {
         _repository = repository;
     }
-    public async Task<List<GetCarListWithBrandsResult>> Handle()
+    public List<GetCarListWithBrandsResult> Handle()
     {
         var values = _repository.GetCarListWithBrands();
         return values.Select(x => new GetCarListWithBrandsResult
