@@ -15,7 +15,7 @@ public class RemoveAboutHandle
 
     public async Task Handle(RemoveAboutCommands removeAbout)
     {
-        About about = await _repository.GetByIdAsync(removeAbout.AboutId);
+        About about = await _repository.GetByIdAsync(removeAbout.Id);
         await _repository.RemoveAsync(about);
     }
 }

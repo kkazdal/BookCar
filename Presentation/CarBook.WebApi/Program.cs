@@ -1,5 +1,6 @@
 using CarBook.Application.Features.CQRS.Handlers.AboutHandler;
 using CarBook.Application.Features.CQRS.Handlers.Car;
+using CarBook.Application.Features.CQRS.Handlers.ContactHandler;
 using CarBook.Application.Interfaces;
 using CarBook.Application.Interfaces.CarRespositories;
 using CarBook.Persistence.Context;
@@ -42,6 +43,12 @@ builder.Services.AddScoped<GetCategoryQueryHandle>();
 builder.Services.AddScoped<UpdateCategoryHandle>();
 builder.Services.AddScoped<RemoveCategoryHandle>();
 builder.Services.AddScoped<CreateCategoryHandle>();
+
+builder.Services.AddScoped<GetContactByIdQueryHandle>();
+builder.Services.AddScoped<GetContactQueryHandle>();
+builder.Services.AddScoped<UpdateContactHandle>();
+builder.Services.AddScoped<RemoveContactHandle>();
+builder.Services.AddScoped<CreateContactHandle>();
 
 builder.Services.AddControllers(); // <-- Controller'ları ekledik
 // Add services to the container.
