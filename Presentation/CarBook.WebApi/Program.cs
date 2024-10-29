@@ -5,6 +5,7 @@ using CarBook.Application.Interfaces;
 using CarBook.Application.Interfaces.CarRespositories;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
+using CarBook.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +50,8 @@ builder.Services.AddScoped<GetContactQueryHandle>();
 builder.Services.AddScoped<UpdateContactHandle>();
 builder.Services.AddScoped<RemoveContactHandle>();
 builder.Services.AddScoped<CreateContactHandle>();
+
+builder.Services.AddSaveApplicationService(builder.Configuration);
 
 builder.Services.AddControllers(); // <-- Controller'ları ekledik
 // Add services to the container.
