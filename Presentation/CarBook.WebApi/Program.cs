@@ -51,7 +51,7 @@ builder.Services.AddScoped<UpdateContactHandle>();
 builder.Services.AddScoped<RemoveContactHandle>();
 builder.Services.AddScoped<CreateContactHandle>();
 
-builder.Services.AddSaveApplicationService(builder.Configuration);
+builder.Services.AddSaveApplicationService(builder.Configuration);//Mediator için dependency injection yapıldı
 
 builder.Services.AddControllers(); // <-- Controller'ları ekledik
 // Add services to the container.
