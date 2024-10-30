@@ -14,9 +14,6 @@ public class UpdateServiceHandler : IRequestHandler<UpdateServiceCommand>
     {
         _repository = repository;
     }
-
-
-
     public async Task Handle(UpdateServiceCommand request, CancellationToken cancellationToken)
     {
         var response = await _repository.GetByIdAsync(request.ServiceId);
