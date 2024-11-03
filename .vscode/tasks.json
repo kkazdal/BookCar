@@ -1,0 +1,45 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run API",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"run"
+			],
+			"problemMatcher": "$msCompile",
+			"group": "build",
+			"detail": "Runs the .NET API",
+			"options": {
+				"cwd": "${workspaceFolder}/Presentation/CarBook.WebApi"
+			}
+		},
+		{
+			"label": "Run MVC",
+			"command": "dotnet",
+			"type": "process",
+			"args": [
+				"run"
+			],
+			"problemMatcher": "$msCompile",
+			"group": "build",
+			"detail": "Runs the .NET MVC Project",
+			"options": {
+				"cwd": "${workspaceFolder}/Frontend/CarBookWebUI"
+			}
+		},
+		{
+			"label": "Run Both",
+			"dependsOn": [
+				"Run API",
+				"Run MVC"
+			],
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"problemMatcher": []
+		}
+	]
+  }
+  
