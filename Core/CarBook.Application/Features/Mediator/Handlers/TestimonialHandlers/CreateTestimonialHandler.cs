@@ -22,7 +22,8 @@ public class CreateTestimonialHandler : IRequestHandler<CreateTestimonialCommand
             Comment = request.Comment,
             Description = request.Description,
             ImageUrl = request.ImageUrl,
-            Title = request.Title
+            Title = request.Title,
+            Name = request.Name
         });
     }
 }

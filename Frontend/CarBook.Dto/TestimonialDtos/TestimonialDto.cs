@@ -1,8 +1,8 @@
 using System;
 
-namespace CarBook.Application.Features.Mediator.Results.TestimonialResults;
+namespace CarBook.Dto.TestimonialDtos;
 
-public class GetTestimonialQueryResult
+public class TestimonialDto
 {
     public int TestimonialId { get; set; }
     public string Title { get; set; }
@@ -10,4 +10,5 @@ public class GetTestimonialQueryResult
     public string Comment { get; set; }
     public string ImageUrl { get; set; }
     public string Name { get; set; }
+
 }

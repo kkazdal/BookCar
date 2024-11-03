@@ -21,6 +21,7 @@ public class UpdateTestimonialHandler : IRequestHandler<UpdateTestimonialCommand
         response.Description = request.Description;
         response.Comment = request.Comment;
         response.ImageUrl = request.ImageUrl;
+        response.Name = request.Name;
 
         await _repository.UpdateAsync(response);
     }

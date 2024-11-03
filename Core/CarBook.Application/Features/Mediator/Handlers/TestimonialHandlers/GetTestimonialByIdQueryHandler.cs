@@ -25,7 +25,8 @@ public class GetTestimonialByIdQueryHandler : IRequestHandler<GetTestimonialById
             Description = response.Description,
             Comment = response.Comment,
             ImageUrl = response.ImageUrl,
-            Title = response.Title
+            Title = response.Title,
+            Name = response.Name
         };
     }
 }

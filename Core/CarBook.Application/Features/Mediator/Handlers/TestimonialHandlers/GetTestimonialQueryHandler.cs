@@ -24,7 +24,8 @@ public class GetTestimonialQueryHandler : IRequestHandler<GetTestimonialQuery, L
             Comment = x.Comment,
             Description = x.Description,
             ImageUrl = x.ImageUrl,
-            Title = x.Title
+            Title = x.Title,
+            Name = x.Name
         }).ToList();
     }
 }

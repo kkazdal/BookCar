@@ -1,4 +1,5 @@
 using System;
+using CarBook.Dto.TestimonialDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -16,15 +17,15 @@ public class _TestimonialComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var request = _httpClientFactory.CreateClient();
-        var response = await request.GetAsync("http://localhost:5000/api/GetTestimonialList");
+        var response = await request.GetAsync("http://localhost:5000/api/Testimonial/GetTestimonialList");
 
-        // if (response.IsSuccessStatusCode)
-        // {
-        //     var jsonData = await response.Content.ReadAsStringAsync();
-        //     var convert = JsonConvert.DeserializeObject<List<>>(jsonData);
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonData = await response.Content.ReadAsStringAsync();
+            var convert = JsonConvert.DeserializeObject<List<TestimonialDto>>(jsonData);
 
-        //     return View(convert);
-        // }
+            return View(convert);
+        }
 
         return View();
     }
