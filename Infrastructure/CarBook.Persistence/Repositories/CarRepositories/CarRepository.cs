@@ -29,7 +29,8 @@ public class CarRepository : ICarRepository
                        select new GetLastCarsByNumber
                        {
                            brandName = brand.Name,
-                           Model = car.Model
+                           Model = car.Model,
+                           imageUrl = car.CoverImageUrl
                        }).ToList();
 
         return carList;

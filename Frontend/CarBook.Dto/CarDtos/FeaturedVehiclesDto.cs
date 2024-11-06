@@ -1,8 +1,8 @@
 using System;
 
-namespace CarBook.Application.Features.CQRS.Results.Car;
+namespace CarBook.Dto.CarDtos;
 
-public class GetLastCarsByNumber
+public class FeaturedVehiclesDto
 {
     public string brandName { get; set; }
     public string Model { get; set; }
