@@ -32,6 +32,7 @@ builder.Services.AddScoped<UpdateBrandHandle>();
 builder.Services.AddScoped<RemoveBrandHandle>();
 builder.Services.AddScoped<CreateBrandHandle>();
 
+builder.Services.AddScoped<GetCarsByNumberHandle>();
 builder.Services.AddScoped<GetCarByIdQueryHandle>();
 builder.Services.AddScoped<GetCarQueryHandle>();
 builder.Services.AddScoped<GetCarListWithBrandHandle>();

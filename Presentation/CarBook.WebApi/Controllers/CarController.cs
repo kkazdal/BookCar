@@ -15,13 +15,15 @@ namespace CarBook.WebApi.Controllers
         private readonly UpdateCarHandle _updateCarHandle;
         private readonly RemoveCarHandle _removeCarHandle;
         private readonly GetCarListWithBrandHandle _getCarListWithBrandHandle;
+        private readonly GetCarsByNumberHandle _getCarsByNumberHandle;
         public CarController(
             CreateCarHandle createCarHandler,
             GetCarByIdQueryHandle getCarByIdQueryHandle,
             GetCarQueryHandle getCarQueryHandle,
             UpdateCarHandle updateCarHandle,
             RemoveCarHandle removeCarHandle,
-            GetCarListWithBrandHandle getCarListWithBrandHandle
+            GetCarListWithBrandHandle getCarListWithBrandHandle,
+            GetCarsByNumberHandle getCarsByNumberHandle
         )
         {
             _createCarHandler = createCarHandler;
@@ -30,6 +32,14 @@ namespace CarBook.WebApi.Controllers
             _updateCarHandle = updateCarHandle;
             _removeCarHandle = removeCarHandle;
             _getCarListWithBrandHandle = getCarListWithBrandHandle;
+            _getCarsByNumberHandle = getCarsByNumberHandle;
+        }
+
+        [HttpGet("GetLastCarsByNumber")]
+        public async Task<IActionResult> GetLastCarsByNumber(int carNumber)
+        {
+            var response = _getCarsByNumberHandle.Handle(carNumber);
+            return Ok(response);
         }
 
         [HttpGet("GetCarList")]
