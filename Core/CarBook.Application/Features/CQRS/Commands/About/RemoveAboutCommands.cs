@@ -1,8 +1,9 @@
 using System;
+using MediatR;
 
 namespace CarBook.Application.Features.CQRS.Commands.About;
 
-public class RemoveAboutCommands
+public class RemoveAboutCommands : IRequest
 {
     public int Id { get; set; }
 

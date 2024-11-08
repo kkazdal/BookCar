@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarBook.Domain", "Core\CarBook.Domain\CarBook.Domain.csproj", "{5EA996DE-4255-428C-BA83-266C05425B1A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D4C2B3CE-582F-4761-9E23-8C4B0141A1D1}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe = ReadMe
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Persistence", "Infrastructure\CarBook.Persistence\CarBook.Persistence.csproj", "{EB332610-93C3-4952-A3C2-AA8983D0C9D9}"
 EndProject
