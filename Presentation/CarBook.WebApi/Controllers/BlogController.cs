@@ -17,6 +17,13 @@ namespace CarBook.WebApi.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("GetLastBlogsByNumber")]
+        public async Task<IActionResult> GetLastBlogsByNumber(int blogNumber)
+        {
+            var response = await _mediator.Send(new GetLastBlogsQueryByNumber(blogNumber));
+            return Ok(response);
+        }
+
         [HttpGet("GetBlogList")]
         public async Task<IActionResult> GetBlogList()
         {

@@ -6,11 +6,14 @@ using CarBook.Application.Interfaces.CarRespositories;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
 using CarBook.Application.Services;
+using CarBook.Application.Interfaces.BlogRepositories;
+using CarBook.Persistence.Repositories.BlogRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
+builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
 
 builder.Services.AddScoped<CarBookContext>();
 
