@@ -1,8 +1,8 @@
 using System;
 
-namespace CarBook.Application.Features.Mediator.Results.BlogResults;
+namespace CarBook.Dto.BlogDtos;
 
-public class GetLastBlogsByNumberResult
+public class LastBlogsDto
 {
     public int BlogId { get; set; }
     public string AuthorName { get; set; }

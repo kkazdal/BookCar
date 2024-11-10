@@ -25,7 +25,8 @@ public class BlogRepository : IBlogRepository
                                   BlogId = blog.Id,
                                   AuthorName = author.Name,
                                   CoverImageUrl = blog.CoverImageUrl,
-                                  Title = blog.Title
+                                  Title = blog.Title,
+                                  CreatedDate = blog.CreatedDate
                               }).ToListAsync();
 
 
