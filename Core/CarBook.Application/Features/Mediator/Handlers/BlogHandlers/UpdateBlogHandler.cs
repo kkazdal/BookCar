@@ -23,6 +23,7 @@ public class UpdateBlogHandler : IRequestHandler<UpdateBlogCommand>
         blog.Title = request.Title;
         blog.CoverImageUrl = request.CoverImageUrl;
         blog.CategoryId = request.CategoryId;
+        blog.Description = request.Description;
 
         await _repository.UpdateAsync(blog);
     }

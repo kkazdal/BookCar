@@ -11,4 +11,6 @@ public class UpdateBlogCommand : IRequest
     public string CoverImageUrl { get; set; }
     public DateTime CreatedDate { get; set; }
     public int CategoryId { get; set; }
+    public string Description { get; set; }
+
 }

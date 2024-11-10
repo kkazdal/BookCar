@@ -25,7 +25,8 @@ public class GetBlogQueryHandler : IRequestHandler<GetBlogQuery, List<GetQueryBl
             CoverImageUrl = x.CoverImageUrl,
             CreatedDate = x.CreatedDate,
             Id = x.Id,
-            Title = x.Title
+            Title = x.Title,
+            Description = x.Description
         }).ToList();
     }
 }

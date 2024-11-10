@@ -24,7 +24,8 @@ public class CreateBlogHandler : IRequestHandler<CreateBlogCommand>
                 CategoryId = request.CategoryId,
                 Title = request.Title,
                 CoverImageUrl = request.CoverImageUrl,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                Description = request.Description
             }
         );
     }

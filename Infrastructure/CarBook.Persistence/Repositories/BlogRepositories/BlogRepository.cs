@@ -26,7 +26,8 @@ public class BlogRepository : IBlogRepository
                                   AuthorName = author.Name,
                                   CoverImageUrl = blog.CoverImageUrl,
                                   Title = blog.Title,
-                                  CreatedDate = blog.CreatedDate
+                                  CreatedDate = blog.CreatedDate,
+                                  Description = blog.Description
                               }).ToListAsync();
 
 
@@ -45,7 +46,8 @@ public class BlogRepository : IBlogRepository
                                   ImageUrl = blog.CoverImageUrl,
                                   AuthorId = author.AuthorId,
                                   BlogId = blog.Id,
-                                  CreatedDate = blog.CreatedDate
+                                  CreatedDate = blog.CreatedDate,
+                                  Description = blog.Description
                               }).ToListAsync();
 
         return response;
