@@ -32,4 +32,22 @@ public class BlogRepository : IBlogRepository
 
         return response;
     }
+
+    public async Task<List<GetBlogsWithAuthorResult>> GetBlogsWithAuthorList()
+    {
+        var response = await (from blog in _carBookContext.Blogs
+                              join author in _carBookContext.Authors
+                              on blog.AuthorId equals author.AuthorId
+                              select new GetBlogsWithAuthorResult
+                              {
+                                  AuthorName = author.Name,
+                                  BlogTitle = blog.Title,
+                                  ImageUrl = blog.CoverImageUrl,
+                                  AuthorId = author.AuthorId,
+                                  BlogId = blog.Id,
+                                  CreatedDate = blog.CreatedDate
+                              }).ToListAsync();
+
+        return response;
+    }
 }
