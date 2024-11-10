@@ -16,6 +16,7 @@ namespace CarBook.WebApi.Controllers
         private readonly RemoveCarHandle _removeCarHandle;
         private readonly GetCarListWithBrandHandle _getCarListWithBrandHandle;
         private readonly GetCarsByNumberHandle _getCarsByNumberHandle;
+        private readonly GetCarsWithPricingsHandler _getCarsWithPricingsHandler;
         public CarController(
             CreateCarHandle createCarHandler,
             GetCarByIdQueryHandle getCarByIdQueryHandle,
@@ -23,7 +24,8 @@ namespace CarBook.WebApi.Controllers
             UpdateCarHandle updateCarHandle,
             RemoveCarHandle removeCarHandle,
             GetCarListWithBrandHandle getCarListWithBrandHandle,
-            GetCarsByNumberHandle getCarsByNumberHandle
+            GetCarsByNumberHandle getCarsByNumberHandle,
+            GetCarsWithPricingsHandler getCarsWithPricingsHandler
         )
         {
             _createCarHandler = createCarHandler;
@@ -33,6 +35,14 @@ namespace CarBook.WebApi.Controllers
             _removeCarHandle = removeCarHandle;
             _getCarListWithBrandHandle = getCarListWithBrandHandle;
             _getCarsByNumberHandle = getCarsByNumberHandle;
+            _getCarsWithPricingsHandler = getCarsWithPricingsHandler;
+        }
+
+        [HttpGet("GetCarsWithPricingList")]
+        public async Task<IActionResult> GetCarsWithPricingList()
+        {
+            var response = await _getCarsWithPricingsHandler.handle();
+            return Ok(response);
         }
 
         [HttpGet("GetLastCarsByNumber")]

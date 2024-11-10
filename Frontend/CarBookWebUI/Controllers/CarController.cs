@@ -16,12 +16,12 @@ namespace CarBookWebUI.Controllers
         public async Task<ActionResult> Index()
         {
             var createClient = _httpClientFactory.CreateClient();
-            var request = await createClient.GetAsync("http://localhost:5000/api/Car/GetCarList");
+            var request = await createClient.GetAsync("http://localhost:5000/api/Car/GetCarsWithPricingList");
 
             if (request.IsSuccessStatusCode)
             {
                 var jsonData = await request.Content.ReadAsStringAsync();
-                var response = JsonConvert.DeserializeObject<List<CarListDto>>(jsonData);
+                var response = JsonConvert.DeserializeObject<List<CarWithPricingModelDto>>(jsonData);
 
                 return View(response);
             }

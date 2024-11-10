@@ -1,4 +1,5 @@
 using System;
+using CarBook.Application.Features.CQRS.Queries.Car;
 using CarBook.Application.Features.CQRS.Results.Car;
 using CarBook.CarBookDomain.Entities;
 
@@ -8,4 +9,5 @@ public interface ICarRepository
 {
     List<Car> GetCarListWithBrands();
     List<GetLastCarsByNumber> GetTheLastCarsByNumber();
+    Task<List<GetCarsWithPricingModel>> GetCarsWithPricings();
 }
