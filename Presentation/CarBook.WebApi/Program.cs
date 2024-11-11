@@ -8,12 +8,16 @@ using CarBook.Persistence.Repositories;
 using CarBook.Application.Services;
 using CarBook.Application.Interfaces.BlogRepositories;
 using CarBook.Persistence.Repositories.BlogRepositories;
+using CarBook.Application.Features.CQRS.Handlers.Category;
+using CarBook.Application.Interfaces.CategoryRepositories;
+using CarBook.Persistence.Repositories.CategoryRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
 builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
+builder.Services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
 
 builder.Services.AddScoped<CarBookContext>();
 
@@ -44,6 +48,7 @@ builder.Services.AddScoped<UpdateCarHandle>();
 builder.Services.AddScoped<RemoveCarHandle>();
 builder.Services.AddScoped<CreateCarHandle>();
 
+builder.Services.AddScoped<GetCategoryByBlogNumberHandler>();
 builder.Services.AddScoped<GetCategoryByIdQueryHandle>();
 builder.Services.AddScoped<GetCategoryQueryHandle>();
 builder.Services.AddScoped<UpdateCategoryHandle>();

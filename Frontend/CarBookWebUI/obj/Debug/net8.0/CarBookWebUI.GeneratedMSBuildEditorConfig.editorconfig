@@ -58,12 +58,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0Fib3V0VXNDb21wb25lbnRQYXJ0aWFsL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_AddCommentComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0FkZENvbW1lbnRDb21wb25lbnRQYXJ0aWFsL0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_BecomeDriverComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0JlY29tZURyaXZlckNvbXBvbmVudFBhcnRpYWwvRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_BlogCategoriesComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0Jsb2dDYXRlZ29yaWVzQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_BlogDetailAuthorAboutAndBlogComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0Jsb2dEZXRhaWxBdXRob3JBYm91dEFuZEJsb2dDb21wb25lbnRQYXJ0aWFsL0RlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_BlogDetailMainComponentPartial/Default.cshtml]
@@ -74,8 +82,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0Jsb2dEZXRhaWxSZWNlbnRCbG9nQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_BlogDetailTitleAndDescriptionComponentPartial/Default.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0Jsb2dEZXRhaWxUaXRsZUFuZERlc2NyaXB0aW9uQ29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_CommentListComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvX0NvbW1lbnRMaXN0Q29tcG9uZW50UGFydGlhbC9EZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Shared/Components/_DefaultCoverUILayoutComponentPartial/Default.cshtml]

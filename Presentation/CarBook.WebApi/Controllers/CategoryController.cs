@@ -1,4 +1,5 @@
 using CarBook.Application.Features.CQRS.Commands.Category;
+using CarBook.Application.Features.CQRS.Handlers.Category;
 using CarBook.Application.Features.CQRS.Queries.Category;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,12 +14,14 @@ namespace CarBook.WebApi.Controllers
         private readonly GetCategoryQueryHandle _getCategoryQueryHandler;
         private readonly UpdateCategoryHandle _updateCategoryHandle;
         private readonly RemoveCategoryHandle _removeCategoryHandle;
+        private readonly GetCategoryByBlogNumberHandler _getCategoryByBlogNumberHandler;
         public CategoryController(
             CreateCategoryHandle createCategoryHandler,
             GetCategoryByIdQueryHandle getCategoryByIdQueryHandle,
             GetCategoryQueryHandle getCategoryQueryHandle,
             UpdateCategoryHandle updateCategoryHandle,
-            RemoveCategoryHandle removeCategoryHandle
+            RemoveCategoryHandle removeCategoryHandle,
+            GetCategoryByBlogNumberHandler getCategoryByBlogNumberHandler
         )
         {
             _createCategoryHandler = createCategoryHandler;
@@ -26,6 +29,14 @@ namespace CarBook.WebApi.Controllers
             _getCategoryQueryHandler = getCategoryQueryHandle;
             _updateCategoryHandle = updateCategoryHandle;
             _removeCategoryHandle = removeCategoryHandle;
+            _getCategoryByBlogNumberHandler = getCategoryByBlogNumberHandler;
+        }
+
+        [HttpGet("GetCategoryByBlogNumberList")]
+        public async Task<IActionResult> GetCategoryByBlogNumberList()
+        {
+            var response = await _getCategoryByBlogNumberHandler.Handle();
+            return Ok(response);
         }
 
         [HttpGet("GetCategoryList")]
