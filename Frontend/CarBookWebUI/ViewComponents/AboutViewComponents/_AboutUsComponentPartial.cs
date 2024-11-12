@@ -18,7 +18,7 @@ public class _AboutUsComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var request = _httpClientFactory.CreateClient();
-        var response = await request.GetAsync("http://localhost:5000/api/About/GetAboutList");
+        var response = await request.GetAsync("http://localhost:5002/api/About/GetAboutList");
 
         if (response.IsSuccessStatusCode)
         {

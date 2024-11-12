@@ -17,7 +17,7 @@ public class _ServicesComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/Service/GetServiceList");
+        var request = await createClient.GetAsync("http://localhost:5002/api/Service/GetServiceList");
 
         if (request.IsSuccessStatusCode)
         {

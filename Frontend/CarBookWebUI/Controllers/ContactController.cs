@@ -30,7 +30,7 @@ namespace CarBookWebUI.Controllers
             createContactDto.SendDate = DateTime.Now;
             var jsonConvert = JsonConvert.SerializeObject(createContactDto);
             StringContent stringContent = new StringContent(jsonConvert, Encoding.UTF8, "application/json");
-            var request = await createClient.PostAsync("http://localhost:5000/api/Contact/CreateContact", stringContent);
+            var request = await createClient.PostAsync("http://localhost:5002/api/Contact/CreateContact", stringContent);
 
             if (request.IsSuccessStatusCode)
             {

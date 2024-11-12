@@ -17,7 +17,7 @@ public class _FeeaturedVehiclesComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/Car/GetLastCarsByNumber?carNumber=5");
+        var request = await createClient.GetAsync("http://localhost:5002/api/Car/GetLastCarsByNumber?carNumber=5");
 
         if (request.IsSuccessStatusCode)
         {

@@ -17,7 +17,7 @@ public class _BlogCategoriesComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/Category/GetCategoryByBlogNumberList");
+        var request = await createClient.GetAsync("http://localhost:5002/api/Category/GetCategoryByBlogNumberList");
 
         if (request.IsSuccessStatusCode)
         {

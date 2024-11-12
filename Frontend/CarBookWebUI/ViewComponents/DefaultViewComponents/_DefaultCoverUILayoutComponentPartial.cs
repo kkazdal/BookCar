@@ -17,7 +17,7 @@ public class _DefaultCoverUILayoutComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/Banner/GetBannerList");
+        var request = await createClient.GetAsync("http://localhost:5002/api/Banner/GetBannerList");
 
         if (request.IsSuccessStatusCode)
         {

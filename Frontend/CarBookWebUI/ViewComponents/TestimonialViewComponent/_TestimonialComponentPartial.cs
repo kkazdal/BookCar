@@ -17,7 +17,7 @@ public class _TestimonialComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var request = _httpClientFactory.CreateClient();
-        var response = await request.GetAsync("http://localhost:5000/api/Testimonial/GetTestimonialList");
+        var response = await request.GetAsync("http://localhost:5002/api/Testimonial/GetTestimonialList");
 
         if (response.IsSuccessStatusCode)
         {

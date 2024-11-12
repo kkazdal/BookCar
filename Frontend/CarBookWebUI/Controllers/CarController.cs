@@ -16,7 +16,7 @@ namespace CarBookWebUI.Controllers
         public async Task<ActionResult> Index()
         {
             var createClient = _httpClientFactory.CreateClient();
-            var request = await createClient.GetAsync("http://localhost:5000/api/Car/GetCarsWithPricingList");
+            var request = await createClient.GetAsync("http://localhost:5002/api/Car/GetCarsWithPricingList");
 
             if (request.IsSuccessStatusCode)
             {

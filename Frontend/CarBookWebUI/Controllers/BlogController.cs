@@ -16,7 +16,7 @@ namespace CarBookWebUI.Controllers
         public async Task<ActionResult> IndexAsync()
         {
             var createClient = _httpClientFactory.CreateClient();
-            var request = await createClient.GetAsync("http://localhost:5000/api/Blog/GetBlogsWithAuthorList");
+            var request = await createClient.GetAsync("http://localhost:5002/api/Blog/GetBlogsWithAuthorList");
 
             if (request.IsSuccessStatusCode)
             {
@@ -28,8 +28,9 @@ namespace CarBookWebUI.Controllers
             return View();
         }
 
-        public async Task<ActionResult> BlogDetail()
+        public async Task<ActionResult> BlogDetail(int id)
         {
+            ViewBag.BlogId = id;
             return View();
         }
 

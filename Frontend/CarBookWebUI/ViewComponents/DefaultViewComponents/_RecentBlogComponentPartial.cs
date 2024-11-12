@@ -17,7 +17,7 @@ public class _RecentBlogComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/Blog/GetLastBlogsByNumber?blogNumber=3");
+        var request = await createClient.GetAsync("http://localhost:5002/api/Blog/GetLastBlogsByNumber?blogNumber=3");
         if (request.IsSuccessStatusCode)
         {
             var jsonString = await request.Content.ReadAsStringAsync();

@@ -17,7 +17,7 @@ public class _FooterAddressViewComponentPartial : ViewComponent
     public async Task<IViewComponentResult> InvokeAsync()
     {
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5000/api/FooterAddress/GetFooterAddressList");
+        var request = await createClient.GetAsync("http://localhost:5002/api/FooterAddress/GetFooterAddressList");
 
         if (request.IsSuccessStatusCode)
         {
