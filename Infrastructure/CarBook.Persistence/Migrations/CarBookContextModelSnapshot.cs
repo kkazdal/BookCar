@@ -489,6 +489,28 @@ namespace CarBook.Persistence.Migrations
                     b.ToTable("Blogs");
                 });
 
+            modelBuilder.Entity("CarBook.Domain.Entities.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BlogId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TagName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.ToTable("Tag");
+                });
+
             modelBuilder.Entity("CarBook.CarBookDomain.Entities.Car", b =>
                 {
                     b.HasOne("CarBook.CarBookDomain.Entities.Brand", "Brand")
@@ -568,6 +590,17 @@ namespace CarBook.Persistence.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("CarBook.Domain.Entities.Tag", b =>
+                {
+                    b.HasOne("CarBook.Domain.Entities.Blog", "Blog")
+                        .WithMany("Tags")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+                });
+
             modelBuilder.Entity("CarBook.CarBookDomain.Entities.Brand", b =>
                 {
                     b.Navigation("Cars");
@@ -600,6 +633,11 @@ namespace CarBook.Persistence.Migrations
             modelBuilder.Entity("CarBook.Domain.Entities.Author", b =>
                 {
                     b.Navigation("Blogs");
+                });
+
+            modelBuilder.Entity("CarBook.Domain.Entities.Blog", b =>
+                {
+                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }
