@@ -7,4 +7,5 @@ public interface IBlogRepository
 {
     Task<List<GetLastBlogsByNumberResult>> GetBlogAndAuthorName();
     Task<List<GetBlogsWithAuthorResult>> GetBlogsWithAuthorList();
+    Task<GetQueryBlogByIdResult> GetBlogWithAuthorInfoById(int blogId);
 }

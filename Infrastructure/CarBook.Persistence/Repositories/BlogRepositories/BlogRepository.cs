@@ -52,4 +52,27 @@ public class BlogRepository : IBlogRepository
 
         return response;
     }
+
+    public async Task<GetQueryBlogByIdResult> GetBlogWithAuthorInfoById(int blogId)
+    {
+        var response = await (from blog in _carBookContext.Blogs
+                              where blog.Id == blogId
+                              join author in _carBookContext.Authors
+                              on blog.AuthorId equals author.AuthorId
+                              select new GetQueryBlogByIdResult
+                              {
+                                  AuthorName = author.Name,
+                                  AuthorId = author.AuthorId,
+                                  CategoryId = blog.CategoryId,
+                                  CoverImageUrl = blog.CoverImageUrl,
+                                  CreatedDate = blog.CreatedDate,
+                                  Description = blog.Description,
+                                  Title = blog.Title,
+                                  AuthorDescription = author.Description,
+                                  Id = blog.Id
+                              }).FirstOrDefaultAsync();
+
+        return response!;
+
+    }
 }

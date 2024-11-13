@@ -10,5 +10,6 @@ public class GetQueryBlogByIdResult
     public DateTime CreatedDate { get; set; }
     public int CategoryId { get; set; }
     public string Description { get; set; }
-
+    public string AuthorDescription { get; set; }
+    public string AuthorName { get; set; }
 }

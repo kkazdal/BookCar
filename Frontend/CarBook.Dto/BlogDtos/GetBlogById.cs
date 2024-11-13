@@ -12,6 +12,5 @@ public class GetBlogById
     public string Description { get; set; }
     public int AuthorId { get; set; }
     public string AuthorName { get; set; }
-    public string AuthorAbout { get; set; }
-    public List<string> TagList { get; set; }
+    public string AuthorDescription { get; set; }
 }
