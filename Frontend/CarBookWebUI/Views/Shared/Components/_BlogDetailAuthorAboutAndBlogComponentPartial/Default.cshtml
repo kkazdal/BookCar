@@ -4,7 +4,7 @@
 <h2 class="mb-3">@Model.Title</h2>
 <p>@Model.Description</p>
 
-@await Component.InvokeAsync("_TagCloudComponentPartial", new { id = ViewBag.BlogId })
+@await Component.InvokeAsync("_TagCloudComponentPartial", new { blogId = ViewBag.BlogId })
 
 <div class="about-author d-flex p-4 bg-light">
     <div class="bio mr-5">

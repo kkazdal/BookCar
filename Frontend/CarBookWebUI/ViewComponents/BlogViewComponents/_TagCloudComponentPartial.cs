@@ -15,12 +15,12 @@ public class _TagCloudComponentPartial : ViewComponent
         _httpClientFactory = httpClientFactory;
     }
 
-    public async Task<IViewComponentResult> InvokeAsync(int Id)
+    public async Task<IViewComponentResult> InvokeAsync(int blogId)
     {
-        ViewBag.BlogId = Id;
+        ViewBag.BlogId = blogId;
  
         var createClient = _httpClientFactory.CreateClient();
-        var request = await createClient.GetAsync("http://localhost:5002/api/Tag/GetTagByBlogIdList?blogId=" + Id);
+        var request = await createClient.GetAsync("http://localhost:5002/api/Tag/GetTagByBlogIdList?blogId=" + blogId);
         Debug.WriteLine(request);
         if (request.IsSuccessStatusCode)
         {
