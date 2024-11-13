@@ -17,6 +17,7 @@ public class _BlogDetailAuthorAboutAndBlogComponentPartial : ViewComponent
 
     public async Task<IViewComponentResult> InvokeAsync(int id)
     {
+        ViewBag.BlogId = id;
         var createClient = _httpClientFactory.CreateClient();
         var request = await createClient.GetAsync("http://localhost:5002/api/Blog/GetBlogById?id=" + id);
 

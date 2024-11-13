@@ -4,11 +4,7 @@
 <h2 class="mb-3">@Model.Title</h2>
 <p>@Model.Description</p>
 
-<div class="tag-widget post-tag-container mb-5 mt-5">
-    <div class="tagcloud">
-        <a href="#" class="tag-cloud-link">Gelecek</a>
-    </div>
-</div>
+@await Component.InvokeAsync("_TagCloudComponentPartial", new { id = ViewBag.BlogId })
 
 <div class="about-author d-flex p-4 bg-light">
     <div class="bio mr-5">

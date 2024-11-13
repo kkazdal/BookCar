@@ -11,6 +11,8 @@ using CarBook.Persistence.Repositories.BlogRepositories;
 using CarBook.Application.Features.CQRS.Handlers.Category;
 using CarBook.Application.Interfaces.CategoryRepositories;
 using CarBook.Persistence.Repositories.CategoryRepositories;
+using CarBook.Persistence.Repositories.TagRepositories;
+using CarBook.Application.Interfaces.TagRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,8 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
 builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
 builder.Services.AddScoped(typeof(ICategoryRepository), typeof(CategoryRepository));
+builder.Services.AddScoped(typeof(ITagRepository), typeof(TagRepository));
+
 
 builder.Services.AddScoped<CarBookContext>();
 
