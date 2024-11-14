@@ -15,4 +15,5 @@ public class Blog
     public Category Category { get; set; }
     public string Description { get; set; }
     public List<Tag>? Tags { get; set; }
+    public List<Comment>? Comments { get; set; }
 }
