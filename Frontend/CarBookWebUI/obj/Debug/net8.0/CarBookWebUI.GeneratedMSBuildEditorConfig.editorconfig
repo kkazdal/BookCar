@@ -22,6 +22,42 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWJvdXQvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminCar/CreateCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5DYXIvQ3JlYXRlQ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminCar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5DYXIvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminCar/UpdateCar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5DYXIvVXBkYXRlQ2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/AdminFooterPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvQWRtaW5Gb290ZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/AdminHeaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvQWRtaW5IZWFkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/AdminNavbarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvQWRtaW5OYXZiYXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/AdminScriptPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvQWRtaW5TY3JpcHRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/AdminSidebarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvQWRtaW5TaWRlYmFyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/AdminLayout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW5MYXlvdXQvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/kadirkazdal/Desktop/Projects/Net Projects/CarBook/Frontend/CarBookWebUI/Views/Blog/BlogDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQmxvZy9CbG9nRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
