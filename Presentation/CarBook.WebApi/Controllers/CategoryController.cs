@@ -61,9 +61,9 @@ namespace CarBook.WebApi.Controllers
         }
 
         [HttpDelete("DeleteCategory")]
-        public async Task<IActionResult> DeleteAbout(RemoveCategoryCommand removeCategoryCommand)
+        public async Task<IActionResult> DeleteAbout(int id)
         {
-            await _removeCategoryHandle.handle(removeCategoryCommand);
+            await _removeCategoryHandle.handle(new RemoveCategoryCommand(id));
             return Ok("Kayıt Silindi");
         }
 

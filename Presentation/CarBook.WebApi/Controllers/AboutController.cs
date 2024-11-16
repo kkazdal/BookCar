@@ -54,9 +54,9 @@ namespace CarBook.WebApi.Controller
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteAbout(RemoveAboutCommands removeAboutCommands)
+        public async Task<IActionResult> DeleteAbout(int id)
         {
-            await _removeAboutHandle.Handle(removeAboutCommands);
+            await _removeAboutHandle.Handle(new RemoveAboutCommands(id));
             return Ok("Hakkımda Bilgisi Silindi");
         }
 
