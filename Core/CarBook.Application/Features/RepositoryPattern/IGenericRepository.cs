@@ -9,4 +9,5 @@ public interface IGenericRepository<T> where T : class
     Task Remove(T entity);
     Task Update(T entity);
     Task<T> GetById(int id);
+    List<T> GetCommentsByBlogId(int id);
 }

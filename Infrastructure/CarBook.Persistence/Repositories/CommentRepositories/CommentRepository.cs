@@ -38,6 +38,22 @@ public class CommentRepository<T> : IGenericRepository<Comment>
         return await _carBookContext.Comments.FindAsync(id);
     }
 
+    public List<Comment> GetCommentsByBlogId(int id)
+    {
+        var response = from comment in _carBookContext.Comments
+                       where comment.BlogId == id
+                       select new Comment
+                       {
+                           Description = comment.Description,
+                           CommentId = comment.CommentId,
+                           CreatedDate = comment.CreatedDate,
+                           Name = comment.Name,
+                           BlogId = comment.BlogId
+                       };
+        return response.ToList();
+
+    }
+
     public async Task Remove(Comment entity)
     {
         var item = await _carBookContext.Comments.FindAsync(entity.CommentId);

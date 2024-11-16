@@ -11,5 +11,6 @@ public class GetBlogsWithAuthorResult
     public required string BlogTitle { get; set; }
     public required string ImageUrl { get; set; }
     public string Description { get; set; }
+    public string CategoryName { get; set; }
 
 }

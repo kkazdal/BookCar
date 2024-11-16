@@ -39,6 +39,8 @@ public class BlogRepository : IBlogRepository
         var response = await (from blog in _carBookContext.Blogs
                               join author in _carBookContext.Authors
                               on blog.AuthorId equals author.AuthorId
+                              join blogCategory in _carBookContext.Categories
+                              on blog.CategoryId equals blogCategory.CategoryId
                               select new GetBlogsWithAuthorResult
                               {
                                   AuthorName = author.Name,
@@ -47,7 +49,8 @@ public class BlogRepository : IBlogRepository
                                   AuthorId = author.AuthorId,
                                   BlogId = blog.Id,
                                   CreatedDate = blog.CreatedDate,
-                                  Description = blog.Description
+                                  Description = blog.Description,
+                                  CategoryName = blogCategory.Name
                               }).ToListAsync();
 
         return response;

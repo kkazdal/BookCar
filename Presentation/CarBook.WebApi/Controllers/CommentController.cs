@@ -16,6 +16,13 @@ namespace CarBook.WebApi.Controllers
             _genericRepository = genericRepository;
         }
 
+        [HttpGet("GetCommentsListByBlogId")]
+        public IActionResult GetCommentsListByBlogId(int id)
+        {
+            var response = _genericRepository.GetCommentsByBlogId(id);
+            return Ok(response);
+        }
+
         [HttpGet("CommentList")]
         public async Task<IActionResult> CommentList()
         {
