@@ -36,5 +36,48 @@ namespace CarBook.WebApi.Controllers
             var response = await _mediator.Send(new GetTotalBlogNumberQuery());
             return Ok(response);
         }
+
+        [HttpGet("GetBlogTitleByMaxComment")]
+        public async Task<ActionResult> GetBlogTitleByMaxComment()
+        {
+            var response = await _mediator.Send(new GetBlogTitleByMaxCommentQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("BrandNameByMaxCar")]
+        public async Task<ActionResult> BrandNameByMaxCar()
+        {
+            var response = await _mediator.Send(new BrandNameByMaxCarQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetAuthorCount")]
+        public async Task<ActionResult> GetAuthorCount()
+        {
+            var response = await _mediator.Send(new GetAuthorCountQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetAvgRentPriceForDaily")]
+        public async Task<ActionResult> GetAvgRentPriceForDaily()
+        {
+            var response = await _mediator.Send(new GetAvgRentPriceForDailyQuery());
+            return Ok(response);
+        }
+        
+        [HttpGet("GetAvgRentPriceForMontly")]
+        public async Task<ActionResult> GetAvgRentPriceForMontly()
+        {
+            var response = await _mediator.Send(new GetAvgRentPriceForMontlyQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetAvgRentPriceForWeekly")]
+        public async Task<ActionResult> GetAvgRentPriceForWeekly()
+        {
+            var response = await _mediator.Send(new GetAvgRentPriceForWeeklyQuery());
+            return Ok(response);
+        }
+
     }
 }
