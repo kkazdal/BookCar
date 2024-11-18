@@ -20,7 +20,7 @@ public class GetTotalBlogNumberHandler : IRequestHandler<GetTotalBlogNumberQuery
         var result = await _staticticRepository.GetBlogCount();
         return new GetTotalBlogNumberResult
         {
-            BlogNumber = result
+            count = result
         };
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace CarBook.Application.Features.Mediator.Results.StatisticsResults;
 
-public class GetTotalBlogNumberResult
+public class GetCarBrandAndModelByRentPriceDailyMinResult
 {
-    public int count { get; set; }
+    public decimal Amount { get; set; }
 }

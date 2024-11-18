@@ -64,7 +64,7 @@ namespace CarBook.WebApi.Controllers
             var response = await _mediator.Send(new GetAvgRentPriceForDailyQuery());
             return Ok(response);
         }
-        
+
         [HttpGet("GetAvgRentPriceForMontly")]
         public async Task<ActionResult> GetAvgRentPriceForMontly()
         {
@@ -76,6 +76,49 @@ namespace CarBook.WebApi.Controllers
         public async Task<ActionResult> GetAvgRentPriceForWeekly()
         {
             var response = await _mediator.Send(new GetAvgRentPriceForWeeklyQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarBrandAndModelByRentPriceDailyMax")]
+        public async Task<ActionResult> GetCarBrandAndModelByRentPriceDailyMax()
+        {
+            var response = await _mediator.Send(new GetCarBrandAndModelByRentPriceDailyMaxQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarBrandAndModelByRentPriceDailyMin")]
+        public async Task<ActionResult> GetCarBrandAndModelByRentPriceDailyMin()
+        {
+            var response = await _mediator.Send(new GetCarBrandAndModelByRentPriceDailyMinQuery());
+            return Ok(response);
+        }
+
+
+        [HttpGet("GetCarCountByKmSmallerThan1000")]
+        public async Task<ActionResult> GetCarCountByKmSmallerThan1000()
+        {
+            var response = await _mediator.Send(new GetCarCountByKmSmallerThan1000Query());
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarCountByFuelElectric")]
+        public async Task<ActionResult> GetCarCountByFuelElectric()
+        {
+            var response = await _mediator.Send(new GetCarCountByFuelElectricQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarCountByFuelGasolineOrDiesel")]
+        public async Task<ActionResult> GetCarCountByFuelGasolineOrDiesel()
+        {
+            var response = await _mediator.Send(new GetCarCountByFuelGasolineOrDieselQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetCarCountByTransmissionIsAuto")]
+        public async Task<ActionResult> GetCarCountByTransmissionIsAuto()
+        {
+            var response = await _mediator.Send(new GetCarCountByTransmissionIsAutoQuery());
             return Ok(response);
         }
 
