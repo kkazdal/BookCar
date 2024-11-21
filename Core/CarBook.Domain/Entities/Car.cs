@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CarBook.Domain.Entities;
 
 namespace CarBook.CarBookDomain.Entities
 {
@@ -19,5 +20,8 @@ namespace CarBook.CarBookDomain.Entities
         public ICollection<CarFeature> CarFeatures { get; set; }
         public ICollection<CarDescription> CarDescriptions { get; set; }
         public ICollection<CarPricing> CarPricings { get; set; }
+        public ICollection<RentACar> RentACars { get; set; }
+        public ICollection<RentACarProcess> RentACarProcesses { get; set; }
+
     }
 }

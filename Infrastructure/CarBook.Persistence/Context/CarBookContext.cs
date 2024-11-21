@@ -12,6 +12,7 @@ public class CarBookContext : DbContext
         optionsBuilder.UseSqlServer("Server=localhost,1433;User Id=SA;Password=reallyStrongPwd123;initial Catalog=CarBook;integrated security=true;TrustServerCertificate=true;Trusted_Connection=false;");
 
     }
+    
     public DbSet<About> Abouts { get; set; }
     public DbSet<Banner> Banners { get; set; }
     public DbSet<Brand> Brands { get; set; }
@@ -32,5 +33,7 @@ public class CarBookContext : DbContext
     public DbSet<Author> Authors { get; set; }
     public DbSet<Tag> Tag { get; set; }
     public DbSet<Comment> Comments { get; set; }
-
+    public DbSet<RentACarProcess> RentACarProcesses { get; set; }
+    public DbSet<RentACar> RentACar { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 }

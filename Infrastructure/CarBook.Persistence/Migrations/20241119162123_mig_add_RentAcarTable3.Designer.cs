@@ -4,6 +4,7 @@ using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBook.Persistence.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20241119162123_mig_add_RentAcarTable3")]
+    partial class mig_add_RentAcarTable3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -583,8 +586,8 @@ namespace CarBook.Persistence.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DropOffDate")
-                        .HasColumnType("Date");
+                    b.Property<TimeSpan>("DropOffDate")
+                        .HasColumnType("time");
 
                     b.Property<string>("DropOffDescription")
                         .IsRequired()
@@ -596,8 +599,8 @@ namespace CarBook.Persistence.Migrations
                     b.Property<TimeSpan>("DropOffTime")
                         .HasColumnType("time");
 
-                    b.Property<DateTime>("PickUpDate")
-                        .HasColumnType("Date");
+                    b.Property<TimeSpan>("PickUpDate")
+                        .HasColumnType("time");
 
                     b.Property<string>("PickUpDescription")
                         .IsRequired()
