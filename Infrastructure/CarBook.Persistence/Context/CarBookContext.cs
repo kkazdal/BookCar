@@ -12,7 +12,7 @@ public class CarBookContext : DbContext
         optionsBuilder.UseSqlServer("Server=localhost,1433;User Id=SA;Password=reallyStrongPwd123;initial Catalog=CarBook;integrated security=true;TrustServerCertificate=true;Trusted_Connection=false;");
 
     }
-    
+
     public DbSet<About> Abouts { get; set; }
     public DbSet<Banner> Banners { get; set; }
     public DbSet<Brand> Brands { get; set; }
@@ -36,4 +36,20 @@ public class CarBookContext : DbContext
     public DbSet<RentACarProcess> RentACarProcesses { get; set; }
     public DbSet<RentACar> RentACar { get; set; }
     public DbSet<Customer> Customers { get; set; }
+    public DbSet<Reservation> Reservations { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Reservation>()
+        .HasOne(x => x.PickUpLocation)
+        .WithMany(y => y.PickUpReservation)
+        .HasForeignKey(z => z.PickUpLocationId)
+        .OnDelete(DeleteBehavior.ClientSetNull);
+
+        modelBuilder.Entity<Reservation>()
+        .HasOne(x => x.DropOffLocation)
+        .WithMany(y => y.DropOffReservation)
+        .HasForeignKey(z => z.DropOffLocationId)
+        .OnDelete(DeleteBehavior.ClientSetNull);
+    }
 }

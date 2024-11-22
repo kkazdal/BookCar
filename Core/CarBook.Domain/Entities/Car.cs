@@ -22,6 +22,7 @@ namespace CarBook.CarBookDomain.Entities
         public ICollection<CarPricing> CarPricings { get; set; }
         public ICollection<RentACar> RentACars { get; set; }
         public ICollection<RentACarProcess> RentACarProcesses { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
 
     }
 }
