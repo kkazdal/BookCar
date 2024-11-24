@@ -49,12 +49,18 @@ public class CarRepository : ICarRepository
         var carList = (from car in _carBookContext.Cars
                        join brand in _carBookContext.Brands
                        on car.BrandId equals brand.BrandId
+                       join carPricing in _carBookContext.CarPricings
+                       on car.CarId equals carPricing.CarId
+                       join pricing in _carBookContext.Pricings
+                       on carPricing.PricingId equals pricing.PricingId
                        orderby car.CarId descending
                        select new GetLastCarsByNumber
                        {
                            brandName = brand.Name,
                            Model = car.Model,
-                           imageUrl = car.CoverImageUrl
+                           imageUrl = car.CoverImageUrl,
+                           Price = carPricing.Amount,
+                           PriceName = pricing.Name
                        }).ToList();
 
         return carList;
