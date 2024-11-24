@@ -162,7 +162,7 @@ public class StatisticRepository : IStaticticRepository
 
         if (result == null)
             return 0;
-        
+
         return result.Amount;
     }
 

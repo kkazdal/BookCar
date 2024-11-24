@@ -105,7 +105,6 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
 
             return View();
 
-            return View();
         }
 
     }
