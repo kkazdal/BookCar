@@ -1,14 +1,12 @@
 using System;
 
-namespace CarBook.Domain.Entities;
+namespace CarBook.Application.Features.Mediator.Results.CommentResults;
 
-public class Comment
+public class CommentQueryResult
 {
     public int CommentId { get; set; }
     public string Name { get; set; }
     public required string Description { get; set; }
     public DateTime CreatedDate { get; set; }
     public int BlogId { get; set; }
-    public Blog Blog { get; set; }
-    public string Email { get; set; }
 }

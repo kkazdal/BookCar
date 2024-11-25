@@ -51,8 +51,8 @@ public class CommentRepository<T> : IGenericRepository<Comment>
                            BlogId = comment.BlogId
                        };
         return response.ToList();
-
     }
+
 
     public async Task Remove(Comment entity)
     {

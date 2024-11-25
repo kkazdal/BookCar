@@ -1,14 +1,13 @@
 using System;
+using MediatR;
 
-namespace CarBook.Domain.Entities;
+namespace CarBook.Application.Features.Mediator.Commands.CommentCommands;
 
-public class Comment
+public class CreateCommand : IRequest
 {
-    public int CommentId { get; set; }
     public string Name { get; set; }
     public required string Description { get; set; }
-    public DateTime CreatedDate { get; set; }
+    public DateTime CreatedDate { get; set; } = DateTime.Now;
     public int BlogId { get; set; }
-    public Blog Blog { get; set; }
     public string Email { get; set; }
 }

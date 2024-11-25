@@ -2,11 +2,12 @@
     @await Component.InvokeAsync("_BlogDetailAuthorAboutAndBlogComponentPartial", new { id = ViewBag.BlogId })
 
     <div class="pt-5 mt-5">
-        <h3 class="mb-5">6 Comments</h3>
 
-        @await Component.InvokeAsync("_CommentListComponentPartial")
 
-        @await Component.InvokeAsync("_AddCommentComponentPartial")
+        @await Component.InvokeAsync("_CommentListComponentPartial", new { id = ViewBag.BlogId })
+
+        @* @await Component.InvokeAsync("_AddCommentComponentPartial", new { id = ViewBag.BlogId }) *@
+        @await Html.PartialAsync("~/Views/Blog/AddComment.cshtml", new { id = ViewBag.blogid })
     </div>
 
 </div>
