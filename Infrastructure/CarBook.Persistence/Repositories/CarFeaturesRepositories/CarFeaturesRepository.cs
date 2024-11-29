@@ -1,6 +1,7 @@
 using System;
 using CarBook.Application.Features.Mediator.Results.CarFeatures;
 using CarBook.Application.Interfaces.CarFeaturesRepositories;
+using CarBook.CarBookDomain.Entities;
 using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,20 @@ public class CarFeaturesRepository : ICarFeatureRepository
     public CarFeaturesRepository(CarBookContext carBookContext)
     {
         this._carBookContext = carBookContext;
+    }
+
+    public void ChangeCarFeatureAvailableToFalse(int id)
+    {
+        var value = _carBookContext.CarFeatures.Where(item => item.CarFeatureId == id).FirstOrDefault();
+        value.Available = false;
+        _carBookContext.SaveChanges();
+    }
+
+    public void ChangeCarFeatureAvailableToTrue(int id)
+    {
+        var value = _carBookContext.CarFeatures.Where(item => item.CarFeatureId == id).FirstOrDefault();
+        value.Available = true;
+        _carBookContext.SaveChanges();
     }
 
     public async Task<List<GetCarFeaturesByCarIdResult>> getCarFeaturesByCarId(int carId)
