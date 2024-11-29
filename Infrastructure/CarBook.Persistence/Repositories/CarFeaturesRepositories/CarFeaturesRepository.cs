@@ -30,6 +30,12 @@ public class CarFeaturesRepository : ICarFeatureRepository
         _carBookContext.SaveChanges();
     }
 
+    public void CreateCarFeatureByCar(CarFeature carFeature)
+    {
+        _carBookContext.CarFeatures.Add(carFeature);
+        _carBookContext.SaveChanges();
+    }
+
     public async Task<List<GetCarFeaturesByCarIdResult>> getCarFeaturesByCarId(int carId)
     {
         var response = await (from carFeature in _carBookContext.CarFeatures

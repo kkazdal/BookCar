@@ -36,10 +36,16 @@ namespace CarBook.WebApi.Controllers
         [HttpGet("ChangeCarFeatureAvailableToTrue")]
         public async Task<IActionResult> ChangeCarFeatureAvailableToTrue(int id)
         {
-            var response = _mediator.Send(new ChangeCarFeatureAvailableToTrueCommand(id));
+            _mediator.Send(new ChangeCarFeatureAvailableToTrueCommand(id));
 
             return Ok("Güncelleme Başarılı");
         }
 
+        [HttpPost("CreateCarFeatureByCar")]
+        public async Task<IActionResult> CreateCarFeatureByCar(CreateCarFeatureByCarCommand command)
+        {
+            _mediator.Send(command);
+            return Ok("Ekleme Yapıldı");
+        }
     }
 }

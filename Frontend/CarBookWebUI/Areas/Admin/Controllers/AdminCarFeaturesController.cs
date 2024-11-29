@@ -58,7 +58,7 @@ namespace CarBookWebUI.Areas.Admin.Controllers
         public async Task<IActionResult> CreateFeatureByCarId()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5002/api/Features");
+            var responseMessage = await client.GetAsync("http://localhost:5002/api/Feature/FeatureList");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
