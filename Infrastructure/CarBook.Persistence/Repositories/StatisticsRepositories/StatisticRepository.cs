@@ -2,6 +2,7 @@ using System;
 using CarBook.Application.Features.Mediator.Results.StatisticsResults;
 using CarBook.Application.Interfaces.StatisticsInterface;
 using CarBook.CarBookDomain.Entities;
+using CarBook.Domain.Entities;
 using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -210,5 +211,35 @@ public class StatisticRepository : IStaticticRepository
         {
             count = count
         };
+    }
+
+    public async Task<List<NumberOfRentalByYearResult>> GetNumberOfRentalByYearResult()
+    {
+        var currentYear = DateTime.Now.Year; // Mevcut yıl
+        var response = await (from rentACarProcess in _carBookContext.RentACarProcesses
+                              where rentACarProcess.PickUpDate.Year >= (currentYear - 4)
+                              group rentACarProcess by rentACarProcess.PickUpDate.Year into grouped
+                              select new NumberOfRentalByYearResult
+                              {
+                                  Year = grouped.Key,
+                                  RentalCount = grouped.Count()
+                              }).ToListAsync();
+
+        return response;
+    }
+
+    public async Task<List<NumberOfVehiclesByCarResult>> GetNumberOfVehiclesByCar()
+    {
+        var response = await (from car in _carBookContext.Cars
+                              join brand in _carBookContext.Brands
+                              on car.BrandId equals brand.BrandId
+                              group brand by brand.Name into grouped
+                              select new NumberOfVehiclesByCarResult
+                              {
+                                  BrandName = grouped.Key,
+                                  Count = grouped.Count()
+                              }).ToListAsync();
+
+        return response;
     }
 }

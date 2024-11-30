@@ -122,5 +122,19 @@ namespace CarBook.WebApi.Controllers
             return Ok(response);
         }
 
+        [HttpGet("GetNumberOfRentalByYear")]
+        public async Task<ActionResult> GetNumberOfRentalByYear()
+        {
+            var response = await _mediator.Send(new NumberOfRentalByYearQuery());
+            return Ok(response);
+        }
+
+        [HttpGet("GetNumberOfVehiclesByCar")]
+        public async Task<ActionResult> GetNumberOfVehiclesByCar()
+        {
+            var response = await _mediator.Send(new NumberOfVehiclesByCarQuery());
+            return Ok(response);
+        }
+
     }
 }

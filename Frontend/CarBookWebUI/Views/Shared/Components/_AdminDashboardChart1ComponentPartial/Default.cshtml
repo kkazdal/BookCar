@@ -1,22 +1,26 @@
-﻿<script src="~/chart.js"></script>
+﻿@model List<NumberOfRentalByYearDto>
+<script src="~/chart.js"></script>
 
 <div class="col-lg-4">
     <div class="card">
         <div class="card-body">
 
-            <h4 class="card-title d-inline-block">Yıllık Kiralama Sayıları</h4>
 
+            <h4 class="card-title d-inline-block">Yıllık Kiralama Sayıları</h4>
             <div style="height:260px;">
                 <canvas id="my1Chart" height="220px"></canvas>
                 <script>
+                    var years = @Html.Raw(Json.Serialize(ViewBag.Years));
+                    var counts = @Html.Raw(Json.Serialize(ViewBag.Count));
+
                     var values = document.getElementById('my1Chart').getContext('2d');
                     var myChart = new Chart(values, {
                         type: 'line',
                         data: {
-                            labels: ['2019', '2020', '2021', '2022', '2023'],
+                            labels: years,
                             datasets: [{
                                 label: 'Yıllık Kiralama Grafiği',
-                                data: [285, 245, 185, 366, 458],
+                                data: counts,
                                 borderColor: 'rgba(75,192,192,1)',
                                 borderWidth: 1
                             }]

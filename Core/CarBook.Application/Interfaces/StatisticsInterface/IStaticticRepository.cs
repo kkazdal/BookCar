@@ -20,5 +20,7 @@ public interface IStaticticRepository
     public Task<int> GetCarCountByFuelElectric();//elektrikli sayısı
     public Task<decimal> GetCarBrandAndModelByRentPriceDailyMax();//en pahalı araç
     public Task<decimal> GetCarBrandAndModelByRentPriceDailyMin();//en ucuz araç
+    public Task<List<NumberOfRentalByYearResult>> GetNumberOfRentalByYearResult();
+    public Task<List<NumberOfVehiclesByCarResult>> GetNumberOfVehiclesByCar();
 
 }
