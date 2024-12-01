@@ -2,6 +2,7 @@ using System;
 using CarBook.Dto.CarDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CarBookWebUI.ViewComponents.CarDetailViewComponents;
 
@@ -18,11 +19,14 @@ public class _CarDetailCommentsByCarIdComponentPartial : ViewComponent
     {
         ViewBag.carid = id;
         var client = _httpClientFactory.CreateClient();
-        var responseMessage = await client.GetAsync("http://localhost:5002/api/Reviews?id=" + id);
+        var responseMessage = await client.GetAsync("http://localhost:5002/api/Review/GetReviewByCarIdList?carId=" + id);
         if (responseMessage.IsSuccessStatusCode)
         {
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
-            var values = JsonConvert.DeserializeObject<List<ResultReviewByCarIdDto>>(jsonData);
+            JObject jObject = JObject.Parse(jsonData);
+            var resultList = jObject["result"];
+            
+            var values = JsonConvert.DeserializeObject<List<ResultReviewByCarIdDto>>(resultList.ToString());
             return View(values);
         }
         return View();
