@@ -28,8 +28,28 @@ using CarBook.Application.Interfaces.CarDescriptionRepositories;
 using CarBook.Persistence.Repositories.CarDescriptionRepositories;
 using CarBook.Persistence.Repositories.ReviewRepositories;
 using CarBook.Application.Interfaces.ReviewRepositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using CarBook.Application.Tools;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.RequireHttpsMetadata = false;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidAudience = JwtTokenDefaults.ValidAudience,
+            ValidIssuer = JwtTokenDefaults.ValidIssuer,
+            ClockSkew = TimeSpan.Zero,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.IssuerSigningKey)),
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true
+        };
+    });
 
 builder.Services.AddCors(options =>
 {
@@ -119,5 +139,7 @@ if (app.Environment.IsDevelopment())
 // CORS politikasını ekleyin
 app.UseCors("AllowSpecificOrigins");
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers(); // Controller rotalarını uygulamaya dahil eder
 app.Run();

@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using CarBook.Application.Interfaces;
 using CarBook.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +21,11 @@ public class Repository<T> : IRepository<T> where T : class
     public async Task<List<T>> GetAllAsync()
     {
         return await _context.Set<T>().ToListAsync();
+    }
+
+    public async Task<T?> GetByFilterAsync(Expression<Func<T, bool>> filter)
+    {
+        return await _context.Set<T>().SingleOrDefaultAsync(filter);
     }
 
     public async Task<T> GetByIdAsync(int id)
