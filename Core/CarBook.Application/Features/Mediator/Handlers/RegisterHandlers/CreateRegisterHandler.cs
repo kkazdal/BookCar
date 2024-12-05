@@ -25,7 +25,10 @@ public class CreateRegisterHandler : IRequestHandler<CreateRegisterCommand>
         {
             UserName = request.UserName,
             Password = hashedPassword, // Hash'lenmiş şifreyi kaydediyoruz
-            UserRoleId = (int)Roles.Member
+            UserRoleId = (int)Roles.Member,
+            Email = request.Email,
+            Name = request.Name,
+            Surname = request.Surname
         });
     }
 }
