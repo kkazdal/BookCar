@@ -21,19 +21,26 @@ public class GetCheckUserQueryHandler : IRequestHandler<GetCheckUserQuery, GetCh
     public async Task<GetCheckUserQueryResult> Handle(GetCheckUserQuery request, CancellationToken cancellationToken)
     {
         var values = new GetCheckUserQueryResult();
-        var user = await _userRepository.GetByFilterAsync(x => x.UserName == request.UserName && x.Password == request.Password);
+
+        var user = await _userRepository.GetByFilterAsync(x => x.UserName == request.UserName);
 
         if (user == null)
         {
             values.IsExist = false;
+            return values;
         }
-        else
+
+        bool isPasswordValid = BCrypt.Net.BCrypt.Verify(request.Password, user.Password);
+        if (!isPasswordValid)
         {
-            values.IsExist = true;
-            values.UserName = user.UserName;
-            values.Role = (await _userRoleRepository.GetByFilterAsync(x => x.Id == user.UserRoleId)).UserRoleName;
-            values.Id = user.Id;
+            values.IsExist = false;
+            return values;
         }
+
+        values.IsExist = true;
+        values.UserName = user.UserName;
+        values.Role = (await _userRoleRepository.GetByFilterAsync(x => x.Id == user.UserRoleId)).UserRoleName;
+        values.Id = user.Id;
 
         return values;
     }
