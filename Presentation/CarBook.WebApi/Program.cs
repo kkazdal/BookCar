@@ -36,16 +36,28 @@ using CarBook.Application.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Appsettings dosyasından JWT ayarlarını okuyoruz
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+
+// JwtService'i DI container'a ekliyoruz
+builder.Services.AddSingleton<JwtService>(provider =>
+{
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+    return new JwtService(jwtSettings.IssuerSigningKey, jwtSettings.ValidIssuer, jwtSettings.ValidAudience);
+});
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+
         options.RequireHttpsMetadata = false;
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidAudience = JwtTokenDefaults.ValidAudience,
-            ValidIssuer = JwtTokenDefaults.ValidIssuer,
+            ValidAudience = jwtSettings.ValidAudience,
+            ValidIssuer = jwtSettings.ValidIssuer,
             ClockSkew = TimeSpan.Zero,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.IssuerSigningKey)),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.IssuerSigningKey)),
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true
         };

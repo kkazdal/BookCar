@@ -11,10 +11,13 @@ namespace CarBook.WebApi.Controllers
     public class SignInController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly JwtService _jwtService;
 
-        public SignInController(IMediator mediator)
+        public SignInController(IMediator mediator, JwtService jwtService)
         {
             _mediator = mediator;
+            _jwtService = jwtService;
+
         }
 
         [HttpPost("Login")]
@@ -24,7 +27,7 @@ namespace CarBook.WebApi.Controllers
 
             if (values.IsExist)
             {
-                return Created("", JwtTokenGenerator.GenerateToken(values));
+                return Ok(_jwtService.GenerateToken(values));
             }
             else
             {

@@ -2,6 +2,7 @@ using System;
 using CarBook.Application.Features.Mediator.Queries.UserQueries;
 using CarBook.Application.Features.Mediator.Results.UserResults;
 using CarBook.Application.Interfaces;
+using CarBook.Application.Tools;
 using CarBook.Domain.Entities;
 using MediatR;
 
