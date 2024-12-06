@@ -32,9 +32,24 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CarBook.Application.Tools;
+using CarBook.WebApi.Hubs;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddHttpClient();
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CorsPolicy", builder =>
+    {
+        builder
+            .WithOrigins("http://localhost:5001")  // Yalnızca bu kaynağa izin ver(WebUI)
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();  // Kimlik doğrulama bilgilerine izin ver
+    });
+});
+builder.Services.AddSignalR();
 
 // Appsettings dosyasından JWT ayarlarını okuyoruz
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
@@ -151,7 +166,13 @@ if (app.Environment.IsDevelopment())
 // CORS politikasını ekleyin
 app.UseCors("AllowSpecificOrigins");
 app.UseHttpsRedirection();
+
+app.UseCors("CorsPolicy");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers(); // Controller rotalarını uygulamaya dahil eder
+
+app.MapHub<CarHub>("/carhub").RequireCors("CorsPolicy");
+
 app.Run();
