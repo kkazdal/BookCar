@@ -7,12 +7,10 @@ namespace CarBook.WebApi.Hubs;
 
 public class CarHub : Hub
 {
-    private readonly IHttpClientFactory _httpClientFactory;
     private readonly IRepository<Car> _carRepository;
 
-    public CarHub(IHttpClientFactory httpClientFactory, IRepository<Car> carRepository)
+    public CarHub(IRepository<Car> carRepository)
     {
-        _httpClientFactory = httpClientFactory;
         _carRepository = carRepository;
     }
 
