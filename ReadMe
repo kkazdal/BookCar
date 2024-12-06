@@ -1,5 +1,1 @@
-Add Migration
-dotnet ef migrations add MigrationName
-dotnet ef database update 
-
-Proje tamamlandı. 
+A simple rent a car project with .NET MVC and .NET API.
